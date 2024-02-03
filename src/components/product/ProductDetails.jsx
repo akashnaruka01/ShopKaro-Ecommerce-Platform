@@ -10,6 +10,7 @@ import ReactStars from "react-rating-stars-component";
 import ReviewCard from "./ReviewCard.jsx";
 import MetaData from "../layout/MetaData";
 import { addItemToCart } from "../../actions/cartAction";
+import axios from "axios";
 
 const ProductDetails = () => {
   const dispatch = useDispatch();
@@ -20,6 +21,7 @@ const ProductDetails = () => {
   const { loading, product, error } = useSelector(
     (state) => state.productDetails
   );
+
 
   // quantity management area
   const [quantity, setQuantity] = useState(1);
