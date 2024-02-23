@@ -27,7 +27,7 @@ export const getProducts =
     keyword = "",
     currentPage = 1,
     price = [0, 100000000],
-    category,
+    category = 0,
     ratings = 0
   ) =>
   async (dispatch) => {
@@ -36,11 +36,10 @@ export const getProducts =
       const data = await axios.get(
         `/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${
           price[0]
-        }&price[lt]=${price[1]}${
-          category ? `&category=${category}` : ""
-        }&ratings[gte]=${ratings}`
+        }&price[lt]=${price[1]}${category ? `&category=${category}` : ""}${
+          ratings ? `&ratings[gte]=${ratings}` : ""
+        }`
       );
-
 
       dispatch({ type: ALL_PRODUCT_SUCCESS, payload: data });
     } catch (error) {

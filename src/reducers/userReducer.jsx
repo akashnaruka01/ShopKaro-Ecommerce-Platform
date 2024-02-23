@@ -13,9 +13,9 @@ import {
   FORGOT_PASSWORD_FAIL,
   FORGOT_PASSWORD_REQUEST,
   FORGOT_PASSWORD_SUCCESS,
-  LOAD_USER_FAIL,
   LOAD_USER_REQUEST,
   LOAD_USER_SUCCESS,
+  LOAD_USER_FAIL,
   LOGOUT_FAIL,
   LOGOUT_SUCCESS,
   RESET_PASSWORD_FAIL,
@@ -57,7 +57,6 @@ export const userReducer = (state = { user: {} }, action) => {
         message: "You're logged in successfully",
         user: action.payload,
       };
-
     case login_FAIL:
     case register_FAIL:
       return {

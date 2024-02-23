@@ -44,6 +44,7 @@ const UserOptions = ({ user }) => {
       icon: <DashBoardIcon />,
       direct: dashboard,
     });
+    
   return (
     <>
       <SpeedDial
