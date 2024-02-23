@@ -62,8 +62,5 @@
       "last 1 safari version"
     ]
   },
-  "proxy": "https://ecommerce-shopkaro.onrender.com",
-  "//": [
-    "http://localhost:5000"
-  ]
+  "proxy": "https://ecommerce-shopkaro.onrender.com"
 }
