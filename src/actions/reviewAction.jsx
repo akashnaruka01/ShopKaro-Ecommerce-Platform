@@ -19,7 +19,7 @@ export const addNewReview =
       const config = { headers: { "Content-Type": "application/json" } };
 
       const data = await axios.put(
-        `/api/v1/review`,
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/review`,
         { rating, comment, productId },
         config
       );
@@ -40,7 +40,7 @@ export const addNewReview =
 export const adminReviews = () => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_REVIEWS_REQUEST });
-    const data = await axios.get(`/api/v1/admin/reviewed/product`);
+    const data = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/admin/reviewed/product`);
 
     dispatch({
       type: ADMIN_REVIEWS_SUCCESS,
@@ -59,7 +59,7 @@ export const adminProductReviewes = (id) => async (dispatch) => {
   try {
     dispatch({ type: ADMIN_REVIEWS_REQUEST });
 
-    const data = await axios.get(`/api/v1/reviews?id=${id}`);
+    const data = await axios.get(`${process.env.REACT_APP_BACKEND_URL}/api/v1/reviews?id=${id}`);
 
     console.log("ajfdkdsa",data);
 
@@ -80,7 +80,7 @@ export const deleteReviews = (productId, reviewId) => async (dispatch) => {
     dispatch({ type: DELETE_REVIEW_REQUEST });
 
     const data = await axios.delete(
-      `/api/v1/reviews?productId=${productId}&id=${reviewId}`
+      `${process.env.REACT_APP_BACKEND_URL}/api/v1/reviews?productId=${productId}&id=${reviewId}`
     );
 
     console.log(data);
