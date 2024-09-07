@@ -34,7 +34,7 @@ export const getProducts =
     try {
       dispatch({ type: ALL_PRODUCT_REQUEST });
       const data = await axios.get(
-        `${process.env.BACKEND_URL}/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${
+        `${process.env.REACT_APP_BACKEND_URL}/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${
           price[0]
         }&price[lt]=${price[1]}${category ? `&category=${category}` : ""}${
           ratings ? `&ratings[gte]=${ratings}` : ""
