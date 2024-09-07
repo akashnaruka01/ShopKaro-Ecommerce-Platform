@@ -34,7 +34,7 @@ export const getProducts =
     try {
       dispatch({ type: ALL_PRODUCT_REQUEST });
       const data = await axios.get(
-        `https://shopkaro-backend-kfw8.onrender.com/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${
+        `${proces.env.BACKEND_URL}/api/v1/products?keyword=${keyword}&page=${currentPage}&price[gte]=${
           price[0]
         }&price[lt]=${price[1]}${category ? `&category=${category}` : ""}${
           ratings ? `&ratings[gte]=${ratings}` : ""
